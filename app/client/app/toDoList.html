@@ -3,12 +3,15 @@
         <div class="col-lg-8">
             <div class="form-group">
                 <div class="input-group">
-                    <input type="text" class="form-control" ng-model="description">
-                    <span class="input-group-btn">
-                        <button class="btn btn-primary" type="button" ng-click="addTodoItem()">Add Todo Item</button>
+                    <input type="text" class="form-control" style="margin:10px"
+                        ng-model="description">
+                    <span class="input-group-btn" style="margin:10px">
+                        <button class="btn btn-primary" type="button"  
+                            ng-click="addTodoItem()">Add Todo Item</button>
                     </span>
-                    <span class="input-group-btn">
-                        <button class="btn btn-secondary" type="button" ng-click="deleteAll()">Delete All</button>
+                    <span class="input-group-btn" style="margin:10px">
+                        <button class="btn btn-secondary" type="button" 
+                            ng-click="deleteAll()">Delete All</button>
                     </span>
                 </div>            
             </div>
@@ -21,10 +24,14 @@
                         ng-repeat="(id, data) in todoItems"> 
                         <div>
                             <div>
-                                <button href="#" class="closeMark" ng-click="deleteTodoItem(data.id)">&times;</button>
+                                <button href="#" class="closeMark" 
+                                    ng-click="deleteTodoItem(data.id)">&times;</button>
                             <div>
                             <div>
-                                {{data.id}}: {{data.title}} </br> {{data.description}}
+                                <div class="header">ID: {{data.id}}</div>
+                                <div class="header">{{data.title}}</div>
+                                </br>
+                                <p contenteditable="true">: {{data.title}}  {{data.description}} </p>                                
                             </div> 
                         <div>
                 </li>

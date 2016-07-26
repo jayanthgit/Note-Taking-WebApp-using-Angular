@@ -34,7 +34,7 @@ angular.module("app").controller("toDoListController", ['$scope', 'dataService',
     };
 
     function deleteTodoItem(id) {
-        var index = $scope.todoItems.findIndex(x => x.id === currentId)
+        var index = $scope.todoItems.findIndex(x => x.id === id)
         
         if(index > -1) {
             $scope.todoItems.splice(index, 1);
@@ -47,11 +47,7 @@ angular.module("app").controller("toDoListController", ['$scope', 'dataService',
         var name = 'todo item title';
         var description = $scope.description;
 
-        var item = {
-            id: id,
-            name: name,
-            description: description,
-        };
+        var item = new TodoItem(id, name, description);
 
         var promise = $dataService.addTodoItem(item);
         promise.then(function() {
