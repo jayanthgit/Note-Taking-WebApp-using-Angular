@@ -1,0 +1,21 @@
+.gridster {
+    margin: 50px;
+}
+
+.gridster ul {
+    list-style: none;
+    background-color: white;    
+}
+.gridster ul li {
+    background-color:yellow;
+    margin: 5px;
+    padding: 10px;
+}
+
+.closeMark {
+    float: right;
+    background-color:orange;
+    font-size: 25px;
+    cursor: pointer;
+}
+

@@ -1,0 +1,34 @@
+﻿<div ng-controller="toDoListController">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="form-group">
+                <div class="input-group">
+                    <input type="text" class="form-control" ng-model="description">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" type="button" ng-click="addTodoItem()">Add Todo Item</button>
+                    </span>
+                    <span class="input-group-btn">
+                        <button class="btn btn-secondary" type="button" ng-click="deleteAll()">Delete All</button>
+                    </span>
+                </div>            
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div gridster>
+            <ul>
+                <li gridster-item row=data.row col=data.column size-x="1" size-y="1"
+                        ng-repeat="(id, data) in todoItems"> 
+                        <div>
+                            <div>
+                                <button href="#" class="closeMark" ng-click="deleteTodoItem(data.id)">&times;</button>
+                            <div>
+                            <div>
+                                {{data.id}}: {{data.title}} </br> {{data.description}}
+                            </div> 
+                        <div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
