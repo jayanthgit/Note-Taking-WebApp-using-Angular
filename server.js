@@ -10,10 +10,6 @@ app.use(bodyParser.json());
 
 var port = process.env.PORT || 8080;        // set our port
 
-//app.get('/', function (req, res) {
-   //res.sendFile(__dirname + 'app/client/index.html');   
-//});
-
 app.use(express.static(path.join(__dirname, 'app/client')));
 
 app.use('/api', todoItemRouter);
