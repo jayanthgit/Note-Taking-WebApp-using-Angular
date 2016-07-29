@@ -1,16 +1,14 @@
-﻿<div ng-controller="toDoListController">
+﻿<div ng-controller="toDoListController" >
     <div class="row">
         <div class="col-lg-8">
             <div class="form-group">
                 <div class="input-group">
-                    <input type="text" class="form-control" style="margin:10px"
-                        ng-model="description">
-                    <span class="input-group-btn" style="margin:10px">
+                    <input type="text" class="form-control"
+                        ng-model="description" style="margin:5px">
+                    <span class="input-group-btn" style="margin:5px">
                         <button class="btn btn-primary" type="button"  
                             ng-click="addTodoItem()">Add Todo Item</button>
-                    </span>
-                    <span class="input-group-btn" style="margin:10px">
-                        <button class="btn btn-secondary" type="button" 
+                        <button class="btn btn-secondary" type="button" style="margin:5px"
                             ng-click="deleteAll()">Delete All</button>
                     </span>
                 </div>            
@@ -22,18 +20,15 @@
             <ul>
                 <li gridster-item row=data.row col=data.column size-x="1" size-y="1"
                         ng-repeat="(id, data) in todoItems"> 
+                    <div>
+                        <div class="header">
+                            <button href="#" class="closeMark" ng-click="deleteTodoItem(data.id)">&times;</button>
+                            <div>ID: {{data.id}}</div>
+                            <div>{{data.title}}</div>
                         <div>
-                            <div>
-                                <button href="#" class="closeMark" 
-                                    ng-click="deleteTodoItem(data.id)">&times;</button>
-                            <div>
-                            <div>
-                                <div class="header">ID: {{data.id}}</div>
-                                <div class="header">{{data.title}}</div>
-                                </br>
-                                <p contenteditable="true">: {{data.title}}  {{data.description}} </p>                                
-                            </div> 
-                        <div>
+                        </br>
+                        <div class="description" contenteditable="true">{{data.description}}</div>                                
+                    </div>
                 </li>
             </ul>
         </div>

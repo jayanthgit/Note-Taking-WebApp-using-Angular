@@ -9,13 +9,15 @@
                 Item.Row = 0;
                 Item.Column = 0;
             }
-
-            if (Item.Column > 4) {
-                Item.Row = Item.Row + 1;
-                Item.Column = 0;
-            }
-            else {
-                Item.Column = Item.Column + 1;
+            else
+            {
+                if (Item.Column > 4) {
+                    Item.Row = Item.Row + 1;
+                    Item.Column = 0;
+                }
+                else {
+                    Item.Column = Item.Column + 1;
+                }
             }
 
             this.row = Item.Row;

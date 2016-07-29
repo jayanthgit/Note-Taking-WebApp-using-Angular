@@ -10,36 +10,8 @@ angular.module("app").controller("toDoListController", ['$scope', 'dataService',
             updateData(response);
         });
     };
+
     getAllTodoItems();
-
-    function updateData(response) {
-        var responseData = response.data;
-
-        if($scope.todoItems === undefined)
-        {
-            $scope.todoItems = [];
-        }
-        
-        var length = responseData.length;
-        for (var i = 0; i < length; i++)
-        {
-            currentId = responseData[i].id;
-            var todoItem = new TodoItem(responseData[i].id, responseData[i].name, responseData[i].description);
-            $scope.todoItems.push(todoItem);
-        }
-    };
-
-    function deleteAllTodoItems() {
-        $scope.todoItems = [];        
-    };
-
-    function deleteTodoItem(id) {
-        var index = $scope.todoItems.findIndex(x => x.id === id)
-        
-        if(index > -1) {
-            $scope.todoItems.splice(index, 1);
-        }
-    };
 
     $scope.addTodoItem = function() {
         currentId++;
@@ -92,5 +64,36 @@ angular.module("app").controller("toDoListController", ['$scope', 'dataService',
                 throw response;
             }
         );
+    };
+
+    //Helper functions from here on ......
+
+    function updateData(response) {
+        var responseData = response.data;
+
+        if($scope.todoItems === undefined)
+        {
+            $scope.todoItems = [];
+        }
+        
+        var length = responseData.length;
+        for (var i = 0; i < length; i++)
+        {
+            currentId = responseData[i].id;
+            var todoItem = new TodoItem(responseData[i].id, responseData[i].name, responseData[i].description);
+            $scope.todoItems.push(todoItem);
+        }
+    };
+
+    function deleteTodoItem(id) {
+        var index = $scope.todoItems.findIndex(x => x.id === id)
+        
+        if(index > -1) {
+            $scope.todoItems.splice(index, 1);
+        }
+    };  
+
+    function deleteAllTodoItems() {
+        $scope.todoItems = [];        
     };
 }]);
