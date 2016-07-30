@@ -5,10 +5,10 @@ It uses Angular, NodeJS, MondoDB.
 
 Usage:
 
-1. node server.js
+1. Set the mongdodb server path at app/server/todoItemRouter.js
 
-2. point your browser to "http://localhost:8080/index.html"
+2. npm install - install required depedencies using 
 
-3. Set your mondodb server path here "mongoose.connect('............');" at 'todoItemRouter.js
+3. gulp - this will start all the server and automatically open the browser using browser-sync
 
 Please note that this is a work in progress.
