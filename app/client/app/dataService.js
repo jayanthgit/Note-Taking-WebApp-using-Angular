@@ -14,7 +14,7 @@ angular.module('app').factory("dataService", ['$rootScope', '$http', function ($
     function addTodoItem(data) {
         return $http.post('http://localhost:8080/api/todoItems', data);
     }
-
+ 
     //put: update a particular item
     function updateTodoItem(id, data) {
         return $http.put('http://localhost:8080/api/todoItems', data);
