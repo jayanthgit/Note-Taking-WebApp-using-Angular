@@ -1,3 +1,5 @@
+'use strict';
+
 //        http://localhost:8080
 // GET    /api/todoItems	        Get all the todoItems.
 // POST   /api/todoItems	        Create a todoItem.
@@ -63,11 +65,11 @@ router.route('/todoItems')
         });
     });
 
-router.route('/todoItems/:todo_id')
+router.route('/todoItems/:todoId')
 
     // get the bear with that id (accessed at GET http://localhost:8080/api/todoItems/:todo_id)
     .get(function(req, res) {
-        TodoItem.findById(req.params.todo_id, function(err, todoItem) {
+        TodoItem.findById(req.params.todoId, function(err, todoItem) {
             if (err)
                 res.send(err);
             res.json(todoItem);
@@ -76,7 +78,7 @@ router.route('/todoItems/:todo_id')
     // update the bear with this id (accessed at PUT http://localhost:8080/api/bears/:bear_id)
     .put(function(req, res) {
         // use our bear model to find the bear we want
-        Bear.findById(req.params.bear_id, function(err, bear) {
+        TodoItem.findById(req.params.todoId, function(err, bear) {
             if (err)
                 res.send(err);
 
@@ -94,7 +96,7 @@ router.route('/todoItems/:todo_id')
 
    .delete(function(req, res) {
         TodoItem.remove({
-            id: req.params.todo_id
+            id: req.params.todoId
         }, function(err, bear) {
             if (err)
                 res.send(err);

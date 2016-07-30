@@ -1,14 +1,16 @@
-angular.module('app').factory("dataService", ['$rootScope', '$http', function ($rootScope, $http) {
+'use strict';
+
+angular.module('app').factory('dataService', ['$rootScope', '$http', function ($rootScope, $http) {
 
     //get: get all items
     function getAllTodoItems() {
         return $http.get('http://localhost:8080/api/todoItems');
-    };
+    }
 
     //get: get a particular item
     function getTodoItem(id) {
         return $http.get('http://localhost:8080/api/todoItems/' + id);
-    };
+    }
 
     //post: add an item
     function addTodoItem(data) {

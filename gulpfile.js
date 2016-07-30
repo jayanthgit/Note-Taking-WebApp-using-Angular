@@ -1,3 +1,5 @@
+'use strict';
+
 var gulp = require('gulp');
 var args = require('yargs').argv;
 var config = require('./gulp.config')();
@@ -10,12 +12,11 @@ gulp.task('help', $.taskListing);
 gulp.task('default', ['help']);
 
 gulp.task('vet', function() {
-    log('Analyzing source with JSHint and JSCS');
+    log('Analyzing source with JSHint');
 
     return gulp
-        .src(config.alljs)
+        .src(config.lintingfiles)
         .pipe($.if(args.verbose, $.print()))
-        .pipe($.jscs())
         .pipe($.jshint())
         .pipe($.jshint.reporter('jshint-stylish', {verbose: true}))
         .pipe($.jshint.reporter('fail'));

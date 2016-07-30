@@ -1,5 +1,7 @@
-﻿
-angular.module("app").controller("toDoListController", ['$scope', 'dataService', function ($scope, $dataService) {
+﻿'use strict';
+
+angular.module('app').controller('toDoListController', 
+        ['$scope', 'dataService', function ($scope, $dataService) {
 
     var currentId = 0;
 
@@ -9,7 +11,7 @@ angular.module("app").controller("toDoListController", ['$scope', 'dataService',
         promise.then(function(response) { 
             updateData(response);
         });
-    };
+    }
 
     getAllTodoItems();
 
@@ -80,20 +82,21 @@ angular.module("app").controller("toDoListController", ['$scope', 'dataService',
         for (var i = 0; i < length; i++)
         {
             currentId = responseData[i].id;
-            var todoItem = new TodoItem(responseData[i].id, responseData[i].name, responseData[i].description);
+            var todoItem = new TodoItem(responseData[i].id, responseData[i].name, 
+                                            responseData[i].description);
             $scope.todoItems.push(todoItem);
         }
-    };
+    }
 
     function deleteTodoItem(id) {
-        var index = $scope.todoItems.findIndex(x => x.id === id)
+        var index = $scope.todoItems.findIndex(x => x.id === id);
         
         if(index > -1) {
             $scope.todoItems.splice(index, 1);
         }
-    };  
+    }
 
     function deleteAllTodoItems() {
         $scope.todoItems = [];        
-    };
+    }
 }]);

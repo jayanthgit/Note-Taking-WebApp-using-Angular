@@ -1,3 +1,5 @@
+  'use strict';
+
   var TodoItem = (function () {
         
         function Item(id, title, description) {
@@ -5,7 +7,7 @@
             this.title = title;
             this.description = description;
 
-            if (Item.Row == undefined && Item.Column == undefined) {
+            if (Item.Row === undefined && Item.Column === undefined) {
                 Item.Row = 0;
                 Item.Column = 0;
             }
@@ -22,7 +24,7 @@
 
             this.row = Item.Row;
             this.column = Item.Column;
-        };
+        }
 
         return Item;
 })();

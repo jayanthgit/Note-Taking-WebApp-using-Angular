@@ -1,2 +1,2 @@
 ﻿
-angular.module("app", ['gridster']);
+angular.module('app', ['gridster']);
