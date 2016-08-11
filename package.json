@@ -2,7 +2,8 @@
     "name": "NoteTakingApp",
     "main": "server.js",
     "scripts": {
-        "start": "nodemon server.js" 
+        "start": "nodemon server.js",
+        "postinstall": "bower install" 
     },
     "dependencies": {
         "mongoose": "~3.6.13",
@@ -14,6 +15,7 @@
         "serve-favicon": "^2.0.1"
     },
     "devDependencies": {
+        "bower": "^1.7.7",
         "browser-sync": "^1.8.2",
         "del": "^1.1.1",
         "gulp": "^3.8.10",

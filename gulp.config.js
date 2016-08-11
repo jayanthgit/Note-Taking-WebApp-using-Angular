@@ -2,13 +2,13 @@
 
 module.exports = function() {
     
-    var client = './app/client/';
-    var server = './app/server/';
+    var client = './client/';
+    var server = './server/';
     
     var config = {
         lintingfiles: [
-            './app/client/app/**/*.js',
-            './app/server/**/*.js',
+            './client/app/**/*.js',
+            './server/**/*.js',
             './*.js'
         ],
         client: client,

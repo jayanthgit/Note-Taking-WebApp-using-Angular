@@ -5,7 +5,7 @@ var app = express();
 var http = require('http').Server(app);    
 var path = require('path');       
 var bodyParser = require('body-parser');
-var todoItemRouter = require('./app/server/todoItemRouter');
+var todoItemRouter = require('./server/todoItemRouter');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -27,7 +27,7 @@ var allowCrossDomain = function(req, res, next) {
 };
 app.use(allowCrossDomain);
 
-app.use(express.static(path.join(__dirname, 'app/client')));
+app.use(express.static(path.join(__dirname, 'client')));
 
 app.use('/api', todoItemRouter);
 

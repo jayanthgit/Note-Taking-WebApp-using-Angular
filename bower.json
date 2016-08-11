@@ -1,0 +1,15 @@
+{
+    "name": "Note-Taking-WebApp-using-Angular",
+    "description": "A google keep like webapp",
+    "version": "1.0.0",
+    "private": true,
+    "dependencies": {
+        "angular": "~1.5.0",
+        "angular-route": "~1.5.0",
+        "angular-loader": "~1.5.0",
+        "angular-mocks": "~1.5.0",
+        "angular-gridster": "*",
+        "bootstrap": "latest",
+        "jquery": "~2.0.3"
+    }
+}
