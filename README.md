@@ -7,8 +7,8 @@ Usage:
 
 1. Set the mongdodb server path at app/server/todoItemRouter.js
 
-2. npm install - install required depedencies using 
+2. npm install
 
-3. gulp - this will start all the server and automatically open the browser using browser-sync
+3. gulp serve-dev - this will start all the server and automatically open the browser using browser-sync
 
 Please note that this is a work in progress.
