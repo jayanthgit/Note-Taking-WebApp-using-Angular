@@ -9,6 +9,7 @@ angular.module('app').controller('toDoListController',
         var promise = $dataService.getAllTodoItems();
 
         promise.then(function(response) { 
+            console.log(response);
             updateData(response);
         });
     }

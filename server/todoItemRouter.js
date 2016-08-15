@@ -12,8 +12,15 @@ var router = express.Router();
 var TodoItem     = require('./model/todoItem');
 
 var mongoose   = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/test');
-console.log('connected to db');
+var connection = mongoose.createConnection('mongodb://localhost:27017/test');
+
+connection.on('error', function() {
+    console.log('error trying to connect to db');
+});
+
+connection.once('open', function() {
+    console.log('connected to db');
+});
 
 // middleware to use for all requests
 router.use(function(req, res, next) {
@@ -31,6 +38,7 @@ router.route('/todoItems')
      // get all the TodoItems (accessed at GET http://localhost:8080/api/todoItems)
     .get(function(req, res) {
         TodoItem.find(function(err, todoItems) {
+            console.log('request GET http://localhost:8080/api/todoItems ')
             if (err)
                 res.send(err);
 

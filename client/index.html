@@ -5,23 +5,23 @@
     <meta charset="utf-8" />
 
     <link href="content/bootstrap.css" rel="stylesheet" />
-    <link href="app/app.css" rel="stylesheet" />
-    <link href="content/angular-gridster.min.css" rel="stylesheet" />
+    <link href="app.css" rel="stylesheet" />
+    <link href="content/angular-gridster.min.css" rel="stylesheet" />    
+</head>
+<body>
+    <h1>Take Notes</h>
+    <div ng-include="'app/todoListView/toDoList.html'"></div>
 
-    <script src="bower_components/jquery/jquery.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="bower_components/angular/angular.js"></script>    
-    <script src="bower_components/angular-gridster/dist/angular-gridster.min.js"></script>
+    <script src="external_scripts/jquery-2.0.3.js"></script>
+    <script src="external_scripts/bootstrap.js"></script>
+    <script src="external_scripts/angular.js"></script>    
+    <script src="external_scripts/angular-gridster.min.js"></script>
 
     <script src="external_scripts/jquery.resize.js"></script>
     
-    <script src="app/todoItem.js"></script>
-    <script src="app/module.js"></script>
-    <script src="app/dataService.js"></script>
-    <script src="app/toDoListController.js"></script>
-</head>
-<body>
-    <h1>Keep Notes Here</h>
-    <div ng-include="'app/toDoList.html'"></div>
+    <script src="app/common/todoItem.js"></script>
+    <script src="app/mainModule.js"></script>
+    <script src="app/services/dataService.js"></script>
+    <script src="app/todoListView/toDoListController.js"></script>
 </body>
 </html>
